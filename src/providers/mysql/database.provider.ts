@@ -1,4 +1,3 @@
-import { Inject } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Sequelize } from 'sequelize-typescript';
 import { Category } from 'src/models/category/entities/category.entity';
@@ -7,7 +6,7 @@ export const databaseProviders = [
   {
     provide: 'SEQUELIZE',
     inject: [ConfigService],
-    useFactory: async ( configService: ConfigService) => {
+    useFactory: async (configService: ConfigService) => {
       const sequelize = new Sequelize({
         dialect: 'mysql',
         host: configService.get('DB_HOST'),

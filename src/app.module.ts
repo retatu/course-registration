@@ -7,7 +7,7 @@ import { DatabaseModule } from './providers/mysql/database.module';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     CategoryModule,
-    DatabaseModule
+    DatabaseModule,
   ],
   controllers: [],
   providers: [],
