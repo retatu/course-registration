@@ -1,6 +1,10 @@
 import { ConfigService } from '@nestjs/config';
 import { Sequelize } from 'sequelize-typescript';
+import { Author } from 'src/models/author/entities/author.entity';
 import { Category } from 'src/models/category/entities/category.entity';
+import { Video } from 'src/models/class/video/entities/video.entity';
+import { Course } from 'src/models/course/entities/course.entity';
+import { Topic } from 'src/models/topic/entities/topic.entity';
 
 export const databaseProviders = [
   {
@@ -16,9 +20,10 @@ export const databaseProviders = [
         database: configService.get('DB_NAME'),
 
       });
-      sequelize.addModels([Category]);
+      sequelize.addModels([Category, Author, Course, Topic, Video]);
       await sequelize.sync({
-        force: true
+        alter: true
+        // force: true
       });
       return sequelize;
     },

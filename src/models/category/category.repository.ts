@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { BaseRepository } from 'src/common/repository/base-repository';
-import { CategoryDto } from './dto/create-category.dto';
+import { CategoryDto } from './dto/category.dto';
 import { Category } from './entities/category.entity';
 
 @Injectable()
